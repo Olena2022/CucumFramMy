@@ -2,8 +2,11 @@ package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,9 +14,9 @@ public class CommonMethods {
 
     public static WebDriver driver;
 
-    public void openBrowserAndLauchApplication(){
+    public void openBrowserAndLauchApplication() {
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
-        switch (ConfigReader.getPropertyValue("browser")){
+        switch (ConfigReader.getPropertyValue("browser")) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
@@ -31,6 +34,22 @@ public class CommonMethods {
 //        intializePageObjects();
     }
 
+    public static void sendText(WebElement element, String textToSend){
+        element.clear();
+        element.sendKeys(textToSend);
+    }
 
+    public static WebDriverWait getWait(){
+        WebDriverWait wait=new WebDriverWait(driver, Constants.EXPLICIT_WAIT);
+        return wait;
+    }
 
+    public static void waitForClickability(WebElement element){
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void click(WebElement element){
+    waitForClickability(element);
+    element.click();
+    }
 }
