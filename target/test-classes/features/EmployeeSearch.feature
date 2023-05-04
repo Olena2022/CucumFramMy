@@ -9,7 +9,7 @@ Feature: US-12345 - Search an employee in HRMS
     When user clicks on search button
     Then user is able to see employee information
 
-    @test
+
     Scenario: Search an employee by name
       Given user is navigated to HRMS application
       When user enters valid admin credentials
@@ -18,3 +18,4 @@ Feature: US-12345 - Search an employee in HRMS
       When user enters valid employee name
       When user clicks on search button
       Then user is able to see employee information
+
