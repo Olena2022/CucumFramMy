@@ -1,6 +1,7 @@
 package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,9 +30,8 @@ public class CommonMethods {
                 throw new RuntimeException("Invalid browser name");
         }
         driver.get(ConfigReader.getPropertyValue("url"));
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
-//        intializePageObjects();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
     public static void sendText(WebElement element, String textToSend){
@@ -52,4 +52,27 @@ public class CommonMethods {
     waitForClickability(element);
     element.click();
     }
+
+    public static JavascriptExecutor getJSExecutor(){
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       return js;
+    }
+
+    public static void jsClick(WebElement element){
+        getJSExecutor().executeScript("arguments[0].click();", element);
+    }
+
+    public static void tearDown(){
+        driver.quit();
+    }
+
+
+
+
+
+
+
+
+
+
 }
