@@ -7,6 +7,8 @@ import utils.CommonMethods;
 
 public class LoginPage extends CommonMethods {
 
+    // This is OBJECT Repository
+
     @FindBy(id="txtUsername")
     public WebElement usernameBox;
 
