@@ -1,6 +1,11 @@
 Feature: Adding the employees in HRMS Application
+
+  Background:
+     #Given user is navigated to HRMS application
+
+  @regression @olena
   Scenario: Adding one employee from feature file
-    Given user is navigated to HRMS application
+    #Given user is navigated to HRMS application
     When user enters valid admin credentials
     And user clicks on login button
     Then admin user is successfully logged in

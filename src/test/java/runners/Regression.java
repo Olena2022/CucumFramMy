@@ -1,5 +1,6 @@
 package runners;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -23,14 +24,14 @@ import org.junit.runner.RunWith;
         // when we set it to true, it simply removes all the irrelevant information
         monochrome = true,
 
-        tags = "@olena"
+        tags = "@regression"
         //tags will identify the scenario based on the tag we provide in the feature file
         //use or if we need to execute scenarios from logical or keyword which will execute either of the
         //scenario having the tag
         //use and if we need to execute scenarios from logical and keyword which will execute the scenarios
         //having both the tags in it
-
 )
 
-public class RunnerClass {
+public class Regression {
+
 }

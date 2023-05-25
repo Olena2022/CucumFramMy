@@ -1,19 +1,21 @@
 package steps;
 
+import pages.AddEmployeePage;
 import pages.EmployeeSearchPage;
 import pages.LoginPage;
 
 public class PageInitializers {
 
-    // declear object
+    // declare object
     public static LoginPage login;
     public static EmployeeSearchPage employeeSearchPage;
-
+    public static AddEmployeePage addEmployeePage;
 
     // initialize
     public static void initializePageObjects(){
         login = new LoginPage();
         employeeSearchPage = new EmployeeSearchPage();
+        addEmployeePage = new AddEmployeePage();
     }
 
 }
