@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
         // when we set it to true, it simply removes all the irrelevant information
         monochrome = true,
 
-        tags = "@datatable"
+        tags = "@dashboard"
         //tags will identify the scenario based on the tag we provide in the feature file
         //use or if we need to execute scenarios from logical or keyword which will execute either of the
         //scenario having the tag
