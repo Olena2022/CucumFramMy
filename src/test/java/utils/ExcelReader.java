@@ -18,7 +18,7 @@ public class ExcelReader {
     static Workbook book;
     static Sheet sheet;
 
-    //to open the excel file
+    //to open the Excel file
     public static void openExcel(String filePath){
         try {
             FileInputStream fis = new FileInputStream(filePath);
@@ -35,9 +35,9 @@ public class ExcelReader {
         sheet = book.getSheet(sheetName);
     }
 
-    // it will return the total no. of rows available in the worsheet
+    // it will return the total no. of rows available in the worksheet
     public static int getRowCount(){
-       return sheet.getPhysicalNumberOfRows();
+        return sheet.getPhysicalNumberOfRows();
     }
 
     // it will return the total no. of columns in every row

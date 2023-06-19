@@ -56,7 +56,9 @@ Feature: Adding the employees in HRMS Application
    |yazgul   |MS        |kishan  |
    |tarik    |MS        |mujeeb  |
 
-
+   @excel
+  Scenario: Adding multiple employees from excel file
+    When user add multiple employees from excel file using "EmployeeData" sheet and verify the user added
 
 
 
